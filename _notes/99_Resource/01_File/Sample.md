@@ -15,8 +15,6 @@ tags: []
 3. push
 ```
 
-#### github token
-`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`
 # 주석
 - 이것은 주석[^1] 샘플이다.
 
