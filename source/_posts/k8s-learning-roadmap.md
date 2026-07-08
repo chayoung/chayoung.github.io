@@ -6,8 +6,10 @@ tags:
   - k8s
   - roadmap
   - backend
-summary: 쿠버네티스를 처음부터 운영 관점까지 학습하기 위한 단계별 로드맵 정리
+description: 쿠버네티스를 처음부터 운영 관점까지 학습하기 위한 단계별 로드맵 정리
 status: draft
+categories:
+  - backend
 ---
 
 ## Context
