@@ -1,0 +1,75 @@
+title: 생각창고
+subtitle: Notes on building things and keeping them running
+description: 개인 프로젝트, 개발 메모, 집에서 굴리는 시스템 기록
+keywords:
+  - ai
+  - backend
+  - frontend
+  - synology
+author: Cha Young
+language: ko
+timezone: Asia/Seoul
+url: https://chayoung.github.io
+root: /
+permalink: :category/:title/
+permalink_defaults:
+
+source_dir: source
+public_dir: public
+tag_dir: tags
+archive_dir: archives
+category_dir: categories
+code_dir: downloads/code
+i18n_dir: :lang
+skip_render:
+
+new_post_name: :title.md
+default_layout: post
+titlecase: false
+external_link:
+  enable: true
+  field: site
+  exclude: ""
+filename_case: 0
+render_drafts: false
+post_asset_folder: false
+relative_link: false
+future: true
+syntax_highlighter: highlight.js
+highlight:
+  line_number: false
+  auto_detect: false
+  tab_replace: ""
+  wrap: true
+  hljs: true
+prismjs:
+  preprocess: true
+  line_number: false
+  tab_replace: ""
+
+index_generator:
+  path: ""
+  per_page: 10
+  order_by: -date
+
+category_generator:
+  per_page: 10
+
+tag_generator:
+  per_page: 10
+
+archive_generator:
+  per_page: 10
+  yearly: true
+  monthly: true
+
+feed:
+  type: atom
+  path: atom.xml
+  limit: 20
+  content: false
+
+theme: chayoung
+
+deploy:
+  type:

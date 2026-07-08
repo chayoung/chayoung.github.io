@@ -1,0 +1,26 @@
+<section class="content-section">
+  <div class="section-heading">
+    <p class="section-kicker">Category</p>
+    <h1><%= page.category %></h1>
+  </div>
+  <% page.posts.each(function(post) { %>
+    <article class="article article-summary">
+      <div class="article-inner">
+        <header class="article-header">
+          <div class="article-meta">
+            <a href="<%= url_for(post.path) %>" class="article-date">
+              <time datetime="<%= date_xml(post.date) %>"><%= date(post.date, 'YYYY-MM-DD') %></time>
+            </a>
+          </div>
+          <h2 class="article-title">
+            <a href="<%= url_for(post.path) %>"><%= post.title %></a>
+          </h2>
+          <% if (post.description) { %>
+            <p class="article-description"><%= post.description %></p>
+          <% } %>
+          <a class="article-readmore" href="<%= url_for(post.path) %>">Read article</a>
+        </header>
+      </div>
+    </article>
+  <% }) %>
+</section>

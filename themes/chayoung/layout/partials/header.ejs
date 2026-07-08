@@ -1,0 +1,26 @@
+<header id="header" class="site-header">
+  <div class="site-nav outer">
+    <a class="site-brand" href="<%= url_for('/') %>">
+      <span class="site-brand-text">
+        <strong><%= config.title %></strong>
+        <small><%= config.subtitle %></small>
+      </span>
+    </a>
+
+    <nav id="main-nav" class="site-menu" aria-label="Main navigation">
+      <a id="main-nav-toggle" class="nav-icon" href="javascript:void(0)"><span>Menu</span></a>
+      <% Object.keys(theme.menu).forEach(function(label) { %>
+        <a class="main-nav-link <%= page.path && page.path.indexOf(theme.menu[label].replace(/^\//, '')) === 0 && theme.menu[label] !== '/' ? 'is-active' : '' %>" href="<%= url_for(theme.menu[label]) %>"><%= label %></a>
+      <% }) %>
+    </nav>
+
+    <nav id="sub-nav" class="site-actions" aria-label="Social and search">
+      <% if (theme.social && theme.social.github) { %>
+        <a class="nav-icon" target="_blank" rel="noopener" href="<%= theme.social.github %>" aria-label="github">GitHub</a>
+      <% } %>
+      <% if (theme.social && theme.social.rss) { %>
+        <a class="nav-icon" href="<%= url_for(theme.social.rss) %>" title="RSS Feed">RSS</a>
+      <% } %>
+    </nav>
+  </div>
+</header>

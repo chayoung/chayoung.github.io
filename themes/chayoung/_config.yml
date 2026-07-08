@@ -1,0 +1,39 @@
+menu:
+  Home: /
+  Ai: /categories/ai/
+  BackEnd: /categories/backend/
+  FrontEnd: /categories/frontend/
+  HomeLab: /categories/homelab/
+  Archives: /archives/
+
+intro:
+  title: 생각창고
+  description: 개발, 학습, 운영 기록을 오래 남는 메모로 정리합니다.
+  status: Korean notes on AI, backend, frontend, and homelab.
+
+profile:
+  name: 생각창고
+  role: Personal Tech Notes
+  bio: 지금 필요한 정보를 정리하고, 나중에 다시 꺼내 쓰기 쉽게 다듬는 블로그.
+  location: Seoul
+
+social:
+  github: https://github.com/chayoung
+  rss: /atom.xml
+
+sidebar:
+  recent_posts_limit: 5
+
+giscus:
+  enabled: true
+  repo: chayoung/obsidian-blog-comments
+  repo_id: R_kgDORNtxwQ
+  category: General
+  category_id: DIC_kwDORNtxwc4C2M03
+  mapping: url
+  strict: 1
+  reactions_enabled: 1
+  emit_metadata: 0
+  input_position: top
+  theme: light
+  lang: ko

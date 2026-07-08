@@ -1,0 +1,12 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title><%= page.title ? `${page.title} | ${config.title}` : config.title %></title>
+<meta name="description" content="<%= page.description || config.description %>">
+<link rel="canonical" href="<%= config.url + url_for(page.path || '/') %>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="<%= url_for('/css/style.css') %>">
+<% if (config.feed && config.feed.path) { %>
+  <link rel="alternate" href="<%= url_for(config.feed.path) %>" title="<%= config.title %>" type="application/atom+xml">
+<% } %>

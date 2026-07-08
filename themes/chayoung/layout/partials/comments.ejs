@@ -1,0 +1,29 @@
+<% if (theme.giscus && theme.giscus.enabled) { %>
+  <section id="comments" class="comments-section comments-giscus" aria-label="댓글">
+    <div class="comments-section-header">
+      <span class="comments-section-kicker">Comments</span>
+      <h2>생각을 남겨주세요</h2>
+      <% if (!(theme.giscus.repo && theme.giscus.repo_id && theme.giscus.category_id)) { %>
+        <p>Giscus 설정값을 채우면 이 영역에 댓글이 표시됩니다.</p>
+      <% } %>
+    </div>
+    <% if (theme.giscus.repo && theme.giscus.repo_id && theme.giscus.category_id) { %>
+      <script
+        src="https://giscus.app/client.js"
+        data-repo="<%= theme.giscus.repo %>"
+        data-repo-id="<%= theme.giscus.repo_id %>"
+        data-category="<%= theme.giscus.category %>"
+        data-category-id="<%= theme.giscus.category_id %>"
+        data-mapping="<%= theme.giscus.mapping %>"
+        data-strict="<%= theme.giscus.strict %>"
+        data-reactions-enabled="<%= theme.giscus.reactions_enabled %>"
+        data-emit-metadata="<%= theme.giscus.emit_metadata %>"
+        data-input-position="<%= theme.giscus.input_position %>"
+        data-theme="<%= theme.giscus.theme %>"
+        data-lang="<%= theme.giscus.lang %>"
+        crossorigin="anonymous"
+        async>
+      </script>
+    <% } %>
+  </section>
+<% } %>

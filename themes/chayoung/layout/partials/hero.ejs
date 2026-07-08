@@ -1,0 +1,10 @@
+<div class="site-hero outer">
+  <p class="site-kicker"><%= theme.hero.kicker %></p>
+  <h1><%= theme.hero.title %></h1>
+  <p class="site-description"><%= theme.hero.description %></p>
+  <div class="site-topic-row" aria-label="Topics">
+    <% theme.topics.forEach(function(topic) { %>
+      <a class="<%= page.path && page.path.indexOf(topic.path.replace(/^\//, '')) === 0 ? 'is-active' : '' %>" href="<%= url_for(topic.path) %>"><%= topic.label %></a>
+    <% }) %>
+  </div>
+</div>

@@ -1,0 +1,33 @@
+<section class="intro-strip">
+  <h1><%= theme.intro.title %></h1>
+  <p><%= theme.intro.description %></p>
+  <small><%= theme.intro.status %></small>
+</section>
+
+<section class="content-section post-list-section">
+  <% page.posts.each(function(post) { %>
+    <article class="article article-summary">
+      <div class="article-inner">
+        <header class="article-header">
+          <div class="article-meta">
+            <a href="<%= url_for(post.path) %>" class="article-date">
+              <time datetime="<%= date_xml(post.date) %>"><%= date(post.date, 'YYYY-MM-DD') %></time>
+            </a>
+            <% if (post.categories && post.categories.length) { %>
+              <div class="article-category">
+                <a class="article-category-link" href="<%= url_for(post.categories.first().path) %>"><%= post.categories.first().name %></a>
+              </div>
+            <% } %>
+          </div>
+          <h2 class="article-title">
+            <a href="<%= url_for(post.path) %>"><%= post.title %></a>
+          </h2>
+          <% if (post.description) { %>
+            <p class="article-description"><%= post.description %></p>
+          <% } %>
+          <a class="article-readmore" href="<%= url_for(post.path) %>">Read article</a>
+        </header>
+      </div>
+    </article>
+  <% }) %>
+</section>

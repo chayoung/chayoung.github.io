@@ -1,20 +1,27 @@
-# Quartz v4
+# chayoung.github.io
 
-> “[One] who works with the door open gets all kinds of interruptions, but [they] also occasionally gets clues as to what the world is and what might be important.” — Richard Hamming
+Hexo 기반 개인 블로그입니다.
 
-Quartz is a set of tools that helps you publish your [digital garden](https://jzhao.xyz/posts/networked-thought) and notes as a website for free.
-Quartz v4 features a from-the-ground rewrite focusing on end-user extensibility and ease-of-use.
+## Commands
 
-**If you are looking for Quartz v3, you can find it on the [`hugo` branch](https://github.com/jackyzha0/quartz/tree/hugo).**
+```bash
+npm install
+npm run server
+npm run build
+```
 
-🔗 Read the documentation and get started: https://quartz.jzhao.xyz/
+## Obsidian
 
-[Join the Discord Community](https://discord.gg/cRFFHYye7t)
+이 저장소는 Obsidian Vault로 바로 열어서 사용할 수 있습니다.
 
-## Sponsors
+- 공개 글 폴더: `source/_posts/`
+- 연구/초안 메모 폴더: `notes/`
+- 워크플로 안내: [OBSIDIAN.md](/Users/chayoung/Dev/workspace/chayoung.github.io/OBSIDIAN.md:1)
+- 템플릿: [templates/blog-post-template.md](/Users/chayoung/Dev/workspace/chayoung.github.io/templates/blog-post-template.md:1)
 
-<p align="center">
-  <a href="https://github.com/sponsors/jackyzha0">
-    <img src="https://cdn.jsdelivr.net/gh/jackyzha0/jackyzha0/sponsorkit/sponsors.svg" />
-  </a>
-</p>
+## LLMWiki
+
+LLMWiki와 같이 쓸 때는 다음 폴더만 인덱싱하는 것을 권장합니다.
+
+- `notes/**/*.md`
+- `source/_posts/**/*.md`

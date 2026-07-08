@@ -1,0 +1,76 @@
+<aside id="sidebar">
+  <div class="widget-wrap profile-widget">
+    <div class="profile-mark">생</div>
+    <h3 class="widget-title"><%= theme.profile.name %></h3>
+    <div class="widget">
+      <p class="widget-copy"><%= theme.profile.role %> · <%= theme.profile.location %></p>
+      <p class="widget-copy"><%= theme.profile.bio %></p>
+      <div class="follow-links">
+        <% if (theme.social && theme.social.github) { %>
+          <a href="<%= theme.social.github %>" target="_blank" rel="noopener">GitHub</a>
+        <% } %>
+        <% if (theme.social && theme.social.rss) { %>
+          <a href="<%= url_for(theme.social.rss) %>">RSS</a>
+        <% } %>
+      </div>
+    </div>
+  </div>
+
+  <div class="widget-wrap recent-widget">
+    <h3 class="widget-title">Recent</h3>
+    <div class="widget">
+      <ul class="recent-post-list">
+        <% site.posts.sort('date', -1).limit(theme.sidebar.recent_posts_limit).each(function(post) { %>
+          <li>
+            <a href="<%= url_for(post.path) %>">
+              <% if (post.categories && post.categories.length) { %>
+                <span class="recent-post-category"><%= post.categories.first().name %></span>
+              <% } %>
+              <strong><%= post.title %></strong>
+              <time><%= date(post.date, 'YYYY-MM-DD') %></time>
+            </a>
+          </li>
+        <% }) %>
+      </ul>
+    </div>
+  </div>
+
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list">
+        <% site.categories.sort('name', 1).each(function(category) { %>
+          <li class="category-list-item">
+            <a class="category-list-link" href="<%= url_for(category.path) %>"><%= category.name %></a>
+          </li>
+        <% }) %>
+      </ul>
+    </div>
+  </div>
+
+  <div class="widget-wrap tagcloud-widget">
+    <h3 class="widget-title">Tags</h3>
+    <p class="tagcloud-note">반복해서 다루는 주제.</p>
+    <div class="widget tagcloud">
+      <%- tagcloud({
+        min_font: 11,
+        max_font: 16,
+        unit: 'px',
+        amount: 30,
+        color: false
+      }) %>
+    </div>
+  </div>
+
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archive</h3>
+    <div class="widget">
+      <%- list_archives({
+        type: 'monthly',
+        format: 'YYYY.MM',
+        show_count: false,
+        class: 'archive-list'
+      }) %>
+    </div>
+  </div>
+</aside>

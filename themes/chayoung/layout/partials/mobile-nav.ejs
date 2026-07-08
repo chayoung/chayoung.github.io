@@ -1,0 +1,5 @@
+<nav id="mobile-nav">
+  <% Object.keys(theme.menu).forEach(function(label) { %>
+    <a href="<%= url_for(theme.menu[label]) %>" class="mobile-nav-link"><%= label %></a>
+  <% }) %>
+</nav>

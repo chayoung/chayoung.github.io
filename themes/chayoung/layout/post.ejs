@@ -1,0 +1,46 @@
+<article class="article article-detail">
+  <div class="article-inner">
+    <header class="article-header">
+      <div class="article-meta">
+        <a href="<%= url_for(page.path) %>" class="article-date">
+          <time datetime="<%= date_xml(page.date) %>"><%= date(page.date, 'YYYY-MM-DD') %></time>
+        </a>
+        <% if (page.categories && page.categories.length) { %>
+          <div class="article-category">
+            <a class="article-category-link" href="<%= url_for(page.categories.first().path) %>"><%= page.categories.first().name %></a>
+          </div>
+        <% } %>
+      </div>
+      <h1 class="article-title"><%= page.title %></h1>
+      <% if (page.description) { %>
+        <p class="article-description"><%= page.description %></p>
+      <% } %>
+      <% if (page.tags && page.tags.length) { %>
+        <ul class="article-tag-list">
+          <% page.tags.each(function(tag) { %>
+            <li class="article-tag-list-item">
+              <a class="article-tag-list-link" href="<%= url_for(tag.path) %>"><%= tag.name %></a>
+            </li>
+          <% }) %>
+        </ul>
+      <% } %>
+    </header>
+
+    <div class="article-body-grid <%= toc(page.content) ? 'article-body-grid--with-toc' : '' %>">
+      <% if (toc(page.content)) { %>
+        <aside class="article-toc" aria-label="Table of contents">
+          <strong>목차</strong>
+          <%- toc(page.content, {
+            list_number: false,
+            max_depth: 3,
+            class: 'toc'
+          }) %>
+        </aside>
+      <% } %>
+      <div class="article-entry">
+        <%- page.content %>
+      </div>
+    </div>
+  </div>
+</article>
+<%- partial('partials/comments') %>
